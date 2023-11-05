@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/design.css">
+    <title>Group 2 UI/UX</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="pictures\LOGO.png" alt="FCS2G Logo" class="small-logo">
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#home-section">Home</a>
+                </li>
+                <li>
+                    <a href="#about-section">About</a>
+                </li>
+                <li>
+                    <a href="#products-section">Products</a>
+                </li>
+                <li>
+                    <a href="#cart-section">My Cart</a>
+                </li>
+            </ul>
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+
+    <section id="home-section">
+        <div class="home-content">
+            <h1>"Welcome to FCS2G"</h1>
+            <h2>Premier Source for Fresh and <br>Flavorful Raw Chicken!</h2>
+        </div>
+    </section>
+    
+    <section id="about-section">
+        <div class="about-content">
+            <h1>About Us</h1>
+            <p>Welcome to FCS2G, your trusted source for high-quality raw chicken products. We take pride in providing fresh and safe poultry products to our valued customers.</p>
+            <p>Our commitment to quality, hygiene, and customer satisfaction sets us apart. With years of experience, we guarantee the finest raw chicken you can find.</p>
+            <p>Explore our story, meet our team, and discover what makes us the best choice for your poultry needs.</p>
+        </div>
+    </section>
+
+    <section id="products-section">
+        <div class="list">
+            <div class="item">
+                <img src="pictures/1.png" alt="Whole Chicken">
+                <div class="title">WHOLE CHICKEN</div>
+                <div class="price">₱250</div>
+                <button onclick="addToCart(0)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="pictures/2.png" alt="Half Chicken">
+                <div class="title">HALF CHICKEN</div>
+                <div class="price">₱125</div>
+                <button onclick="addToCart(1)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="pictures/3.png" alt="Fore Chicken">
+                <div class="title">FORE CHICKEN</div>
+                <div class="price">₱65</div>
+                <button onclick="addToCart(2)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="pictures/4.png" alt="Chicken Breast">
+                <div class="title">CHICKEN BREAST</div>
+                <div class="price">₱50</div>
+                <button onclick="addToCart(3)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="pictures/5.png" alt="Chicken Backbone">
+                <div class="title"> CHICKEN BACKBONE</div>
+                <div class="price">₱45</div>
+                <button onclick="addToCart(4)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="pictures/6.png" alt="Chicken Leg">
+                <div class="title">CHICKEN LEG</div>
+                <div class="price">₱80</div>
+                <button onclick="addToCart(5)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="pictures/7.png" alt="Chicken Thigh">
+                <div class="title">CHICKEN THIGH</div>
+                <div class="price">₱40</div>
+                <button onclick="addToCart(6)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="pictures/8.png" alt="Drumstick">
+                <div class="title">DRUMSTICK</div>
+                <div class="price">₱40</div>
+                <button onclick="addToCart(7)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="pictures/9.png" alt="Chicken Wings">
+                <div class="title">CHICKEN WNGS</div>
+                <div class="price">₱20</div>
+                <button onclick="addToCart(8)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="pictures/10.png" alt="Chicken Neck">
+                <div class="title">CHICKEN NECK</div>
+                <div class="price">₱10</div>
+                <button onclick="addToCart(9)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="pictures/11.png" alt="Chicken Feet">
+                <div class="title">CHICKEN FEET</div>
+                <div class="price">₱5</div>
+                <button onclick="addToCart(10)">Add To Cart</button>
+            </div>
+
+            <div class="item">
+                <img src="pictures/12.png" alt="Chicken Head">
+                <div class="title">CHICKEN HEAD</div>
+                <div class="price">₱7</div>
+                <button onclick="addToCart(11)">Add To Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart-section">
+        <h1>MY CART</h1>
+    <ul class="cart-list"></ul>
+
+    <div class="total">Total: ₱0</div>
+    <button class="order-button" onclick="placeOrder()">Order Now</button>
+    
+<div id="loginForm" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeLoginForm()">&times;</span>
+        <h2>FILL UP</h2>
+        <form id="loginForm" onsubmit="return false;">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="number">Number:</label>
+            <input type="tel" id="number" required>
+            <label for="address">Address:</label>
+            <input type="text" id="address" required>
+            <button type="submit" onclick="login()">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front text"> Submit </span>
+            </button>
+        </form>
+    </div>
+</div>
+
+</section>
+</body>
+<script src="js/script.js"></script>
+<script src="js/cart.js"></script>
+
+</html>
